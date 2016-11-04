@@ -11,36 +11,53 @@
     text-align: center;
     top: 30%;
     max-width:40%;
-    background-color: rgba(255,255,255,0.35);
+    background-color: rgba(170, 170, 170, 0.2);
 }
 
 h1{
-    color: #FFF;
+    color: #fff;
     font-family: 'Quicksand', sans-serif;
-    font-size: 80px;
-    font-weight: 400;
+    font-size: 500%;
+    font-weight: 500;
     line-height: 60px;
     margin: 0;
     padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: solid white 1px;
 }
 h2{
-    color: #FFF;
+    color: #e6f0ff;
     font-family: 'Quicksand', sans-serif;
     font-size: 28px;
     font-weight: 100;
     padding-bottom: 5%;
 }
+
 form{
-    color: #FFF;
+    width:50%;
+    color: #fff;
     font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
     margin: 0 auto;
     position: relative;
     text-align: center;
     top: 30%;
 }
-input{
+
+input[type = "text"]{
     width: 40%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid white;
+    background: rgba(200, 200, 200, 0);
+    color: #fff;
+}
+#button{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    top:30%;
+
 }
