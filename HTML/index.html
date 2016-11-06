@@ -9,19 +9,16 @@
 </head>
 <body>
 
-    <ul class="topnav">
+    <ul class="topnav" id = "myTopnav">
         <li><a href="#logo">TripPlanner</a></li>
         <li><a href="#login">Log In</a></li>
         <li><a href="#plan">Plan your trip</a></li>
         <li><a href="#explore">Explore</a></li>
-
-
-
-
         <li class="icon">
             <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
         </li>
     </ul>
+
 
     <div class = "header">
         <div class = "header-text">
@@ -39,7 +36,16 @@
         </div>
     </div>
 
-
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 
 
 </body>
