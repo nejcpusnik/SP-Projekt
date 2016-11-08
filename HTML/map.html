@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>MAP</title>
-    <script type="text/javascript" src="../JS/script.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <script type="text/javascript" src="../JS/mapscript.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/mapstyle.css">
 </head>
 <body>
-    <h1>Choose the destinations you want to check out</h1>
-
-    <div id="map"></div>
+    
+    <ul class="topnav" id = "myTopnav">
+        <li><a href="#logo">TripPlanner</a></li>
+        <li><a href="#login">Log In</a></li>
+        <li><a href="#plan">Plan your trip</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+    </ul>
+    
+    <div class="image"></div>
+    <div class="myMap">
+        <h1>CHOOSE WHAT TO ADD TO YOUR ROUTE</h1>
+        <div id="map"></div>
+    </div>
+    
+    
+    
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap"></script>
 </body>
 </html>
