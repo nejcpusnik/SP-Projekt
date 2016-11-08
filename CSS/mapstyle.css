@@ -3,17 +3,28 @@ html, body{
     padding: 0;
     margin: 0;
 }
-.topnav{
+.topnav-transparent{
     list-style-type: none;
     margin: 0;
-    padding: 5px 0;
+    padding: 0;
     overflow: hidden;
-    background-color: #EFECC9;
+    background-color: rgba(239, 236, 201, 0);
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
+    right 0;
+    z-index: 1000;
+}
+.topnav{
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    overflow: hidden;
+    background-color: rgba(239, 236, 201, 1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right 0;
     z-index: 1000;
 }
     .topnav li{
@@ -22,33 +33,39 @@ html, body{
     .topnav li:first-child{
         float: left;
     }
-
+.topnav li:nth-child(3){
+    border: 1px solid #076481;
+    border-radius: 20px;
+}
     .topnav li a{
-        font-family: Raleway, sans-serif;
+        font-family: Quicksand, sans-serif;
         font-weight: 400;
         display: inline-block;
         color: #076481;
         text-align: center;
-        padding: 25px 25px;
+        padding: 15px 20px;
         text-decoration: none;
         transition: 0.5s;
-        font-size: 20px;
+        font-size: 18px;
     }
-    .topnav li a:hover{
-        background-color: #A6A27E;
-    }
-    .topnav li.icon{
-        display: none;
-    }
+.topnav li a:hover{
+    color: white;
+}
+.topnav li:nth-child(3):hover{
+    border: 1px solid white;
+}
+.topnav li.icon{
+    display: none;
+}
 
-@media screen and (max-width:680px) {
+@media screen and (max-width:540px) {
     ul.topnav li:not(:first-child) {display: none;}
     ul.topnav li.icon {
         float: right;
         display: inline-block;
     }
 }
-@media screen and (max-width:680px) {
+@media screen and (max-width:540px) {
     ul.topnav.responsive {position: relative;}
     ul.topnav.responsive li.icon {
         position: absolute;
@@ -68,33 +85,44 @@ html, body{
 .image{
     width:100%;
     height: 300px;
-    background-color: red;
-    top: 75px;
-    position:absolute;
+    margin-top: 75px;
+    position:relative;
     background-image: url("../docs/Images/bled300px.png");
 }
 .myMap{
-    width: 70%;
-    position: absolute;
+    width: 100%;
+    position: relative;
     margin: 0 auto;
-    left: 0;
-    right: 0;
-    top:375px;
-    background-color: #076481;
-    padding: 1%;
+    background-color: #f5f4f0;
+}
+.main{
+    position: relative;
+    width:70%;
+    margin:0 auto;
+    background-color: #f5f4f0;
+    padding: 5px 0;
 }
 #map{
-    width: 500px;
+    width: 50%;
     height: 500px;
     background-color: grey;
     border: 5px solid #EFECC9;
     border-radius: 5px;
+    box-shadow: -10px 10px 5px #888888;
 }
 h1{
     width:100%;
     text-align: center;
-    padding: 3% 0;
+    padding: 10px 0;
     font-family: quicksand, sans-serif;
+    font-size: 25px;
     font-weight: 400;
-    color: #EFECC9;
+    color: #076481;
+}
+
+.info{
+    position:relative;
+    background-color: #012F2F;
+    width:100%;
+    height: 200px;
 }

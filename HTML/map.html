@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MAP</title>
+    <title>Plan your trip</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/mapscript.js"></script>
@@ -11,7 +11,7 @@
 <body>
     
     <ul class="topnav" id = "myTopnav">
-        <li><a href="#logo">TripPlanner</a></li>
+        <li><a href="#logo">Trippy</a></li>
         <li><a href="#login">Log In</a></li>
         <li><a href="#plan">Plan your trip</a></li>
         <li><a href="#explore">Explore</a></li>
@@ -22,11 +22,14 @@
     
     <div class="image"></div>
     <div class="myMap">
-        <h1>CHOOSE WHAT TO ADD TO YOUR ROUTE</h1>
-        <div id="map"></div>
+        <div class="main">
+            <h1>Choose places to visit on your Trippy trip</h1>
+            
+            <div id="map"></div>
+        </div>
     </div>
     
-    
+    <div class="info"></div>
     
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap"></script>
 </body>

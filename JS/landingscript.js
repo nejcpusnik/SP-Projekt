@@ -15,7 +15,8 @@ window.onscroll = function () {
         myNav.classList.remove("topnav-transparent");
     } 
     else {
-        .add("topnav-transparent");
-        .remove("topnav");
+        myNav.classList.add("topnav-transparent");
+        myNav.classList.remove("topnav");
     }
 };
+
