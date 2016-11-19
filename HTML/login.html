@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn to Trippy</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/loginstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <script type="text/javascript" src="../JS/loginscript.js"></script>
+</head>
+<body>
+    <div class ="nav">
+        <img src="../docs/trippy-logo.png" href="#home">
+        <div class="container">
+            <ul class="topnav" id = "myTopnav">
+                <li><a href="#explore">Explore</a></li> 
+                <li><a href="#plan">Plan your trip</a></li>
+                <li><a href="#login">Log In</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="mainContainer">
+        <div class="loginContainer">
+            <h1>Login to your Trippy account:</h1>
+            <form>
+                <label for="usr">E-mail or username:</label><br>
+                <input type="text" id ="usr" name = "username"><br>
+                <label for="pw">Password:</label><br>
+                <input type="text" id ="pw" name = "password">
+            </form>
+            <div class="gumb">
+                <a href="signin" id="button">Sign in</a>
+            </div>
+            <div class="bcontainer">
+                <a href="forgot" id="button1">Forgot password?</a>
+                <a href="create" id="button2">Create a new account.</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="info"></div>
+
+
+
+</body>
+</html>

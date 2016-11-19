@@ -4,37 +4,39 @@ html, body{
     margin: 0;
     background-color: #f5f4f0;
 }
-.topnav-transparent{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(239, 236, 201, 0);
+.nav{
     position: fixed;
     width: 100%;
-    top: 0;
-    right 0;
-    z-index: 1000;
-}
-.topnav{
-    list-style-type: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
     background-color: rgba(239, 236, 201, 1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right 0;
     z-index: 1000;
+    height: 100px;
+    padding: 5px 0;
+}
+
+.container{
+    float: right;
+    height: 100%;
+    line-height: 100%;
+}
+
+.topnav{
+    
+    vertical-align: middle; 
+    display: inline-block; 
+    line-height: normal;
+    list-style-type: none;
+    position: relative;
+    padding: 0;
 }
     .topnav li{
-        float: right;
+        display: inline-block;
     }
-    .topnav li:first-child{
-        float: left;
-    }
-.topnav li:nth-child(3){
+.nav img{
+    height: 100%;
+    padding: 0;
+}
+.topnav li:nth-child(2){
     border: 1px solid #076481;
     border-radius: 20px;
 }
@@ -46,30 +48,27 @@ html, body{
         text-align: center;
         text-decoration: none;
         transition: 0.5s;
-        padding: 20px 20px;
+        padding: 25px 20px;
         font-size: 18px;
     }
 .topnav li a:hover{
     color: white;
 }
-.topnav li:nth-child(3):hover{
+.topnav li:nth-child(2):hover{
     border: 1px solid white;
 }
 .topnav li.icon{
     display: none;
 }
-.topnav li img{
-    width: 30%;
-    padding-left: 5%;
-}
-@media screen and (max-width:540px) {
-    ul.topnav li:not(:first-child) {display: none;}
+
+@media screen and (max-width:700px) {
+    ul.topnav li {display: none;}
     ul.topnav li.icon {
         float: right;
         display: inline-block;
     }
 }
-@media screen and (max-width:540px) {
+@media screen and (max-width:700px) {
     ul.topnav.responsive {position: relative;}
     ul.topnav.responsive li.icon {
         position: absolute;
@@ -85,7 +84,12 @@ html, body{
         text-align: right;
     }
 }
-
+.places{
+    position:relative;
+    background-color: red;
+    width:100%;
+    height: 600px;
+}
 
 .info{
     position:relative;

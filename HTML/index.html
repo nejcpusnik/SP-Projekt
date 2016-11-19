@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Trippy | Experience the best of your trip!</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/landingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/landing2.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/landingscript.js"></script>
 </head>
 <body>
     <div class ="nav">
-        <img src="../docs/trippy-logo.png" href="#home">
-        <ul class="topnav" id = "myTopnav">
-            <li><a href="#explore">Explore</a></li>
-            <li><a href="#plan">Plan your trip</a></li>
-            <li><a href="#login">Log In</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-            </li>
-        </ul>
+            <ul class="topnav" id = "myTopnav">
+                <li id="logoimg"><a id ="logo"href="#home"><img id="img" src="../docs/trippy-logo.png"></a></li>
+                <li><a href="#login">Log In</a></li>
+                <li><a href="#plan">Plan your trip</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+                </li>
+            </ul>
     </div>
 
     <div class = "header">
         <div class = "header-text">
-            <img id="logo-text" src="../docs/trippy-text.png">
+            <img id="logo-text" src="../docs/trippy-textB.png">
             <h2>Plan your trip and don't miss anything worth checking out!</h2>
         </div>
         <form>
@@ -33,8 +33,9 @@
             <input type="text" id ="end" name = "enddest">
         </form>
         <div class="gumb">
-            <button class="button">Plan your trip</button>
+            <a id="go" href="map.html">Plan your trip</a>
         </div>
+        
     </div>
     
     <div class="about">
@@ -50,8 +51,6 @@
     </div>
     
     <div class="info"></div>
-
-
 
 </body>
 </html>

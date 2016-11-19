@@ -3,6 +3,8 @@ html, body{
     padding: 0;
     margin: 0;
     background-color: #f5f4f0;
+    display: flex;
+    flex-flow: column;
 }
 .nav{
     position: fixed;
@@ -10,7 +12,7 @@ html, body{
     margin: 0;
     background-color: rgba(239, 236, 201, 1);
     z-index: 1000;
-    height: 100px;
+    height: 80px;
     padding: 5px 0;
 }
 
@@ -18,6 +20,7 @@ html, body{
     float: right;
     height: 100%;
     line-height: 100%;
+
 }
 
 .topnav{
@@ -28,6 +31,8 @@ html, body{
     list-style-type: none;
     position: relative;
     padding: 0;
+    display: flex;
+    flex-flow: row;
 }
     .topnav li{
         display: inline-block;
@@ -47,8 +52,8 @@ html, body{
         color: #076481;
         text-align: center;
         text-decoration: none;
-        transition: 0.5s;
-        padding: 25px 20px;
+        transition: 0.5s ease;
+        padding: 20px 20px;
         font-size: 18px;
     }
 .topnav li a:hover{
@@ -56,6 +61,7 @@ html, body{
 }
 .topnav li:nth-child(2):hover{
     border: 1px solid white;
+    transition: 0.5s ease;
 }
 .topnav li.icon{
     display: none;
@@ -85,54 +91,106 @@ html, body{
     }
 }
 
-.image{
-    width: 100%;
+.mainContainer{
     position:relative;
+    width:100%;
+    height: 900px;
+    top: 100px;
 }
-.image img{
-    width: 100%;
-    margin-top: 100px;
-}
-/*
-.myMap{
-    width: 100%;
-    position: relative;
+
+.loginContainer{
+    position:relative;
+    width:30%;
+    height: 700px;
     margin: 0 auto;
-    background-color: #f5f4f0;
+    top: 6%;
+    border: 2px solid #076481;
+    border-radius: 25px;
+    background-color: #E5E2AF;
 }
-*/
-.myMap{
-    position: relative;
-    width:70%;
-    margin: 0 auto;
-    background-color: #f5f4f0;
-    padding-bottom: 5%;
-}
-#map{
-    width: 50%;
-    height: 500px;
-    background-color: grey;
-    border: 5px solid #EFECC9;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 5px 2px grey;
-    -moz-box-shadow: 0 0 5px 2px grey ;
-    box-shadow: 0 0 30px 8px grey;
-}
+
 h1{
-    width: 100%;
     text-align: center;
-    padding-bottom: 1%;
     font-family: quicksand, sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 400;
     color: #076481;
 }
-.placesinfo{
-    position:relative;
-    background-color: blue;
+
+form{
     width:100%;
-    height: 500px;
+    color: #076481;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    top: 5%;
 }
+
+input[type = "text"]{
+    width: 70%;
+    padding: 10px 3px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    background: #f5f4f0;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+input:focus{
+    outline: none;
+    -webkit-box-shadow: 0 0 5px 2px grey;
+    -moz-box-shadow: 0 0 5px 2px grey ;
+    box-shadow: 0 0 20px 1px grey;
+}
+
+.gumb{
+    width: 100%;
+    position:absolute;
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+}
+#button{
+    width: 70%;
+    padding: 15px 28%;
+    text-align: center;
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 15px;
+    border: 1px solid #012F2F;
+    color: #076481;
+    background-color: rgba(200, 200, 200, 0);
+    cursor: pointer;
+}
+.button:focus{
+    outline: none;
+}
+.button:hover{
+    transition: 0.3s ease;
+    background-color: rgba(1, 47, 47, 0.3);
+}
+.button:active{
+    background-color: rgba(7, 100, 129, 0.15);
+}
+.bcontainer{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    top: 58%;
+}
+#button1, #button2{
+    padding: 0 3%;
+    font-family: quicksand, sans-serif;
+    font-size: 14px;
+}
+
+
 .info{
     position:relative;
     background-color: #012F2F;
