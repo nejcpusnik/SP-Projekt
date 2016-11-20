@@ -3,85 +3,86 @@ html, body{
     padding: 0;
     margin: 0;
     background-color: #f5f4f0;
-}
-.nav{
-    position: fixed;
-    width: 100%;
-    margin: 0;
-    background-color: rgba(239, 236, 201, 1);
-    z-index: 1000;
-    height: 100px;
-    padding: 5px 0;
-}
-
-.container{
-    float: right;
-    height: 100%;
-    line-height: 100%;
+    display:flex;
+    flex-flow: column;
 }
 
 .topnav{
-    
-    vertical-align: middle; 
-    display: inline-block; 
-    line-height: normal;
     list-style-type: none;
-    position: relative;
+    margin: 0;
     padding: 0;
+    overflow: hidden;
+    position:fixed;
+    background-color: #EFECC9;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
 }
-    .topnav li{
-        display: inline-block;
-    }
-.nav img{
-    height: 100%;
-    padding: 0;
+
+.topnav li:not(#logoimg) {
+    float: right;
+    margin-top: 15px;
 }
-.topnav li:nth-child(2){
+.topnav li:first-child{
+    float: left;
+}
+#img{
+    max-width: 200px;
+    height:auto;
+    padding-top: 5%;
+}
+.topnav li:nth-child(3){
     border: 1px solid #076481;
-    border-radius: 20px;
+    border-radius: 15px;
 }
-    .topnav li a{
-        font-family: Quicksand, sans-serif;
-        font-weight: 400;
-        display: inline-block;
-        color: #076481;
-        text-align: center;
-        text-decoration: none;
-        transition: 0.5s;
-        padding: 25px 20px;
-        font-size: 18px;
-    }
-.topnav li a:hover{
+.topnav li a:not(#logo){
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    color: #076481;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1em;
+    display:inline-block;
+}
+.topnav li:nth-child(3):hover{
+    border: 1px solid white;
+    background: rgba(7, 100, 129, 0.7);
+    transition: border, background 0.3s ease;
+}
+.topnav li a:not(#logo):hover{
     color: white;
+    transition: color 0.3s ease;
 }
-.topnav li:nth-child(2):hover{
+.topnav li:nth-child(3):hover{
     border: 1px solid white;
 }
+
 .topnav li.icon{
     display: none;
 }
 
-@media screen and (max-width:700px) {
-    ul.topnav li {display: none;}
+@media screen and (max-width:421px) {
+    ul.topnav li:not(:first-child) {display: none;}
     ul.topnav li.icon {
         float: right;
         display: inline-block;
     }
 }
-@media screen and (max-width:700px) {
-    ul.topnav.responsive {position: relative;}
-    ul.topnav.responsive li.icon {
+@media screen and (max-width:421px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive li.icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-    ul.topnav.responsive li {
+    .topnav.responsive li {
         float: none;
         display: inline;
     }
-    ul.topnav.responsive li a {
+    .topnav.responsive li a {
         display: block;
-        text-align: right;
+        text-align: left;
     }
 }
 .places{

@@ -3,155 +3,220 @@ html, body{
     padding: 0;
     margin: 0;
     background-color: #f5f4f0;
+    display:flex;
+    flex-flow: column;
 }
-.nav{
-    position: fixed;
-    width: 100%;
-    margin: 0;
-    background-color: rgba(239, 236, 201, 1);
-    z-index: 1000;
-    height: 100px;
-    padding: 5px 0;
-}
-
-.container{
-    float: right;
-    height: 100%;
-    line-height: 100%;
-}
-
+/*body::before {
+    content: "";
+    background: rgba(7, 100, 129, 1);
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 5em;
+    top: 0;
+    z-index: 1001;
+}*/
 .topnav{
-    
-    vertical-align: middle; 
-    display: inline-block; 
-    line-height: normal;
     list-style-type: none;
-    position: relative;
+    margin: 0;
     padding: 0;
+    overflow: hidden;
+    background: #EFECC9;
+    position:fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
 }
-    .topnav li{
-        display: inline-block;
-    }
-.nav img{
-    height: 100%;
-    padding: 0;
+
+.topnav li:not(#logoimg) {
+    float: right;
+    margin-top: 15px;
 }
-.topnav li:nth-child(2){
+.topnav li:first-child{
+    float: left;
+}
+#img{
+    max-width: 200px;
+    height:auto;
+    padding-top: 5%;
+}
+.topnav li:nth-child(3){
     border: 1px solid #076481;
     border-radius: 20px;
 }
-    .topnav li a{
-        font-family: Quicksand, sans-serif;
-        font-weight: 400;
-        display: inline-block;
-        color: #076481;
-        text-align: center;
-        text-decoration: none;
-        transition: 0.5s;
-        padding: 25px 20px;
-        font-size: 18px;
-    }
-.topnav li a:hover{
-    color: white;
+.topnav li a:not(#logo){
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    color: #076481;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    display:inline-block;
 }
-.topnav li:nth-child(2):hover{
+.topnav li:nth-child(3):hover{
     border: 1px solid white;
+    background: rgba(7, 100, 129, 0.7);
+    transition: border, background 0.3s ease;
 }
+.topnav li a:not(#logo):hover{
+    color: white;
+    transition: color 0.3s ease;
+}
+
 .topnav li.icon{
     display: none;
 }
+.topnav li a:hover{
+   color: white;
+}
 
-@media screen and (max-width:700px) {
-    ul.topnav li {display: none;}
+
+@media screen and (max-width:421px) {
+    ul.topnav li:not(:first-child) {display: none;}
     ul.topnav li.icon {
         float: right;
         display: inline-block;
     }
+
 }
-@media screen and (max-width:700px) {
-    ul.topnav.responsive {position: relative;}
-    ul.topnav.responsive li.icon {
+@media screen and (max-width:421px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive li.icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-    ul.topnav.responsive li {
+    .topnav.responsive li {
         float: none;
         display: inline;
     }
-    ul.topnav.responsive li a {
+    .topnav.responsive li a {
         display: block;
-        text-align: right;
+        text-align: left;
     }
 }
 
-.header{
-    background-image: url("../docs/Images/cropped landing.jpg");
-    background-size: cover;
-    height: 1000px;
+* {box-sizing:border-box}
+.mySlides {
+    display:none;
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+    transition: opacity 3s ease-in-out;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    background: lightslategrey;
+    top: 80px;
+    padding-bottom:75px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+    transition: opacity 3s ease-in-out;
+/*    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;*/
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+}
+
+
+
+.main{
+    position: absolute;
     width: 100%;
+    display: flex;
+    flex-flow: column;
+    z-index: 100;
+    top: 10%;
+    height: auto;
 }
 .header-text{
-    margin: 0 auto;
     position: relative;
     text-align: center;
-    top: 20%;
-    max-width:40%;
+    top: 15%;
+    max-width: 45%;
     background-color: rgba(170, 170, 170, 0.3);
     border-radius: 10px;
+    margin: 0 auto;
 }
 
 #logo-text{
-    width: 60%;
+    max-width: 70%;
     padding-top: 2%;
     padding-bottom: 2%;
     border-bottom: solid #EFECC9 1px;
 }
-h2{
+.header-text h2{
     color: #EFECC9;
     font-family: 'Quicksand', sans-serif;
-    font-size: 28px;
+    max-font-size: 28px;
     font-weight: 100;
     padding-bottom: 5%;
 }
 
-form{
-    width:50%;
+.main form{
+    max-width:50%;
     color: #fff;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     margin: 0 auto;
     position: relative;
     text-align: center;
-    top: 20%;
+    padding-top: 3%;
 }
 
-input[type = "text"]{
-    width: 40%;
-    padding: 10px 3px;
-    margin: 8px 0;
+.main form input[type = "text"]{
+    max-width: 100%;
+    padding: 10px 0;
     box-sizing: border-box;
+    text-align: center;
     border: 1px solid rgba(231, 248, 254, 0.3);
     border-radius: 10px;
     background: rgba(200, 200, 200, 0);
     color: #fff;
     font-size: 15px;
     font-weight: 400;
+    margin-bottom: 10%;
+    margin-top: 1%;
 }
-input:focus{
+
+.main form input:focus{
     outline: none;
+    border: 1px solid rgba(231, 248, 254, 1);
+}
+.main form input:hover{
+    border: 1px solid rgba(231, 248, 254, 1);
+    transition: border 0.3s ease;
 }
 .gumb{
     position: relative;
-    width: 15%;
-    top: 23%;
+    max-width: 50%;
     margin: 0 auto;
-}
-.button{
-    transition: .5e ease;
-    width: 100%;
-    padding: 15px 32px;
     text-align: center;
+}
+#go{
+    transition: .5s ease;
+    max-width: 100%;
+    padding: 10px 0;
     font-family: Quicksand, sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -159,44 +224,83 @@ input:focus{
     display: inline-block;
     border-radius: 20px;
     border: 1px solid #E5E2AF;
-    color: #E5E2AF ;
+    color: #E5E2AF;
     background-color: rgba(200, 200, 200, 0);
     cursor: pointer;
 }
-.button:focus{
-    outline: none;
-}
-.button:active{
-    background-color: rgba(7, 100, 129, 0.15);
+#go:hover{
+    background-color: rgba(7, 100, 129, 0.5);
+    border: 1px solid rgba(7, 100, 129, 0.5);
 }
 
 .about{
     position: relative;
-    background-color: #f5f4f0;
-    width:70%;
+    background: #012F2F;
+    width:100%;
     margin: 0 auto;
-    height: 400px;
+    text-align: center;
+    height:auto;
+}
+.abouttext{
+    background: #f5f4f0;
+    max-width:100%;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    margin: 0 auto;
 }
 .abouttext h2{
-    text-align: center;
+    position: relative;
+    max-width: 60%;
     color: #012F2F;
+    margin: 0 auto;
+    text-align: center;
     font-weight: 600;
     font-size: 40px;
     font-family: Quicksand, sans-serif;
-    padding: 0;
+    padding: 3% 0;
 }
 .abouttext p{
-    text-align: left;
-    color: #076481;
+    position:relative;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 22px;
     font-family: Quicksand, sans-serif;
-    margin-left: 15%;
-    line-height: 2;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 70%;
+    color: #076481;
+    line-height: 2em;
+    padding-bottom: 3%;
 }
 .info{
     position:relative;
     background-color: #012F2F;
     width:100%;
     height: 300px;
+    text-align: center;
+}
+.fa-chevron-down:before{
+    font-size: 35px;
+}
+
+input[type=checkbox]{
+    display:none;
+}
+input[type=checkbox] + label {
+    color: #ccc;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ label {
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-180deg);
+    transition: transform 0.2s ease-in;
+}
+
+input[type=checkbox]:checked ~ div {
+    display:block;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+
 }

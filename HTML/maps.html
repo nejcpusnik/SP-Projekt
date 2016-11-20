@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan your trip!</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/mapstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../JS/mapscript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav id="navMenu">
+        <ul class="topnav" >
+            <li id="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo.png"></a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="index.html">Plan your trip</a></li>
+            <li><a href="places.html">Explore</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="slideshow-container">
+        <h2>Your weekly dose of exploring</h2>
+        <div class="mySlides fade">
+            <img src="../docs/Images/bled300px.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../docs/Images/img3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../docs/Images/img2.jpg" style="width:100%">
+        </div>
+        <div style="display: none">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+    <script>showSlides();</script>
+
+    <div class="totop">
+        <a href="#top" class="fa fa-chevron-circle-up"></a>
+    </div>
+    <div class="myMap">
+        <h1>Choose places to visit on your Trippy trip</h1>
+        <a id="tomap" href="#tomap" class="fa fa-chevron-circle-down" ></a>
+        <div id="map">
+            <div class="search"
+        </div>
+    </div>
+
+    <div class="info">
+
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap"></script>
+</body>
+</html>
