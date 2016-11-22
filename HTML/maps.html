@@ -51,14 +51,15 @@
     <div class="myMap">
         <h1>Choose places to visit on your Trippy trip</h1>
         <a id="tomap" href="#tomap" class="fa fa-chevron-circle-down" ></a>
-        <div id="map">
-            <div class="search"
-        </div>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+
+
     </div>
 
     <div class="info">
 
     </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places"></script>
 </body>
 </html>
