@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>Trippy | Experience the best of your trip!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/landingstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/landingscript.js"></script>
+    <script type="text/javascript" src="../JS/combinescript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav id="navMenu">
         <ul class="topnav" >
-            <li id="logoimg"><a id ="logo"href="index.html"><img id="img" src="../docs/trippy-logo.png"></a></li>
-            <li><a href="login.html">Log In</a></li>
+            <li class="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a></li>
+            <li><a href="login.html">Log In | Sign Up</a></li>
             <li><a href="index.html">Plan your trip</a></li>
             <li><a href="places.html">Explore</a></li>
             <li class="icon">
@@ -22,12 +24,17 @@
             </li>
         </ul>
     </nav>
-
-    <div class="slideshow-container">
-
+    <div class="container">
+        <div id="crossfade">
+            <img src="../docs/Images/land1.jpg" alt="Image 1">
+            <img src="../docs/Images/land2.jpg" alt="Image 2">
+            <img src="../docs/Images/land3.jpg" alt="Image 3">
+            <img src="../docs/Images/land4.jpg" alt="Image 4">
+            <img src="../docs/Images/land5.jpg" alt="Image 5">
+        </div>
         <div class ="main">
             <div class = "header-text">
-                <img id="logo-text" src="../docs/trippy-textB.png">
+                <img id="logo-text" src="../docs/trippy-logo-text.png">
                 <h2>Plan your trip and don't miss anything worth checking out!</h2>
             </div>
             <form>
@@ -40,46 +47,9 @@
                 <a id="go" href="maps.html">Plan your trip</a>
             </div>
         </div>
-
-        <div class="mySlides fade">
-            <img src="../docs/Images/land1.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="../docs/Images/land2.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="../docs/Images/land3.jpg" style="width:100%">
-        </div>
-        <div style="display: none">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-
     </div>
-    <script>showSlides();</script>
-
-
-    <!--<div class = "header">
-        <div class = "header-text">
-            <img id="logo-text" src="../docs/trippy-textB.png">
-            <h2>Plan your trip and don't miss anything worth checking out!</h2>
-        </div>
-        <form>
-            <label for="start">Starting destination:</label><br>
-            <input type="text" id ="start" name = "startdest"><br>
-            <label for="end">Ending destination:</label><br>
-            <input type="text" id ="end" name = "enddest">
-        </form>
-        <div class="gumb">
-            <a id="go" href="maps.html">Plan your trip</a>
-        </div>
-        
-    </div>-->
     
-    <div class="about">
+    <!--<div class="about">
         <input type="checkbox" id="toggle-1">
         <label class="fa fa-chevron-down" for="toggle-1"></label>
         <div class="abouttext">
@@ -91,11 +61,12 @@
                 5. Let the Trippy trip begins
             </p>
         </div>
-    </div>
-
-    <div class="info">
-
-    </div>
-
+    </div>-->
+    <footer>
+        <div class="info">
+            <h2>Nejc Pušnik</h2>
+        </div>
+    </footer>
 </body>
+
 </html>

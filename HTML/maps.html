@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Plan your trip!</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/mapstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="../JS/mapscript.js"></script>
+    <script type="text/javascript" src="../JS/combinescript.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <nav id="navMenu">
         <ul class="topnav" >
-            <li id="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo.png"></a></li>
-            <li><a href="login.html">Log In</a></li>
+            <li class="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a></li>
+            <li><a href="login.html">Log In | Sign Up</a></li>
             <li><a href="index.html">Plan your trip</a></li>
             <li><a href="places.html">Explore</a></li>
             <li class="icon">
@@ -45,21 +47,35 @@
     </div>
     <script>showSlides();</script>
 
-    <div class="totop">
-        <a href="#top" class="fa fa-chevron-circle-up"></a>
-    </div>
-    <div class="myMap">
+
+    <div class="choose">
         <h1>Choose places to visit on your Trippy trip</h1>
         <a id="tomap" href="#tomap" class="fa fa-chevron-circle-down" ></a>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    </div>
+    <div class="myMap">
+        <div id="side-panel">
+            <div>
+                <p>Waypoints:</p><br>
+                <select multiple id="waypoints">
+                    <option value="Bled, Slovenia">Bled</option>
+                    <option value="Bohinj, Slovenia">Bohinj</option>
+                    <option value="Bovec, Slovenia">Bovec</option>
+                    <option value="Soča, Tolmin">Soča</option>
+                </select>
+                <br>
+                <input type="submit" id="submit">
+            </div>
+            <div id="directions-panel"></div>
+        </div>
         <div id="map"></div>
-
-
+        <input id="pac-input" class="controls" type="text" placeholder="Starting destination">
+        <input id="pac-input2" class="controls" type="text" placeholder="Ending destination">
     </div>
-
-    <div class="info">
-
-    </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places"></script>
+    <footer>
+        <div class="info">
+            <h2>Nejc Pušnik</h2>
+        </div>
+    </footer>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places&avoid=highways"></script>
 </body>
 </html>

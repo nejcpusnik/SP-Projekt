@@ -5,43 +5,75 @@
     <meta charset="utf-8">
     <title>Waypoints in directions</title>
     <style>
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
 
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+        #right-panel {
+            margin: 20px;
+            border-width: 2px;
+            width: 20%;
+            height: 400px;
+            float: left;
+            text-align: left;
+            padding-top: 0;
+        }
+        #directions-panel {
+            margin-top: 10px;
+            background-color: #FFEE77;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
 <div id="map"></div>
 <div id="right-panel">
     <div>
-        <input id="pac-input" class="controls" type="text"
-               placeholder="Enter a location">
-        <div id="type-selector" class="controls">
-            <input type="radio" name="type" id="changetype-all" checked="checked">
-            <label for="changetype-all">All</label>
-
-            <input type="radio" name="type" id="changetype-establishment">
-            <label for="changetype-establishment">Establishments</label>
-
-            <input type="radio" name="type" id="changetype-address">
-            <label for="changetype-address">Addresses</label>
-
-            <input type="radio" name="type" id="changetype-geocode">
-            <label for="changetype-geocode">Geocodes</label>
-        </div>
-
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <input id="pac-input2" class="controls" type="text" placeholder="Search Box">
         <br>
         <b>Waypoints:</b> <br>
         <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
         <select multiple id="waypoints">
-            <option value="Brnik">Brnik</option>
-            <option value="Vodice">Vodice</option>
-
+            <option value="montreal, quebec">Montreal, QBC</option>
+            <option value="toronto, ont">Toronto, ONT</option>
+            <option value="chicago, il">Chicago</option>
+            <option value="winnipeg, mb">Winnipeg</option>
+            <option value="fargo, nd">Fargo</option>
+            <option value="calgary, ab">Calgary</option>
+            <option value="spokane, wa">Spokane</option>
+        </select>
+        <br>
         <input type="submit" id="submit">
     </div>
     <div id="directions-panel"></div>
 </div>
 <script>
     function initMap() {
-
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -53,83 +85,18 @@
         document.getElementById('submit').addEventListener('click', function() {
             calculateAndDisplayRoute(directionsService, directionsDisplay);
         });
-
-        var input = /** @type {!HTMLInputElement} */(
-            document.getElementById('pac-input'));
-
-        var types = document.getElementById('type-selector');
+        var input = document.getElementById('pac-input');
+        var input2 = document.getElementById('pac-input2')
+        var searchBox = new google.maps.places.SearchBox(input);
+        var searchBox2 = new google.maps.places.SearchBox(input2);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
 
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        autocomplete.bindTo('bounds', map);
-
-        var infowindow = new google.maps.InfoWindow();
-        var marker = new google.maps.Marker({
-            map: map,
-            anchorPoint: new google.maps.Point(0, -29)
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+            searchBox2.setBounds(map.getBounds());
         });
-
-        autocomplete.addListener('place_changed', function() {
-            infowindow.close();
-            marker.setVisible(false);
-            var place = autocomplete.getPlace();
-            if (!place.geometry) {
-                // User entered the name of a Place that was not suggested and
-                // pressed the Enter key, or the Place Details request failed.
-                window.alert("No details available for input: '" + place.name + "'");
-                return;
-            }
-
-            // If the place has a geometry, then present it on a map.
-            if (place.geometry.viewport) {
-                map.fitBounds(place.geometry.viewport);
-            } else {
-                map.setCenter(place.geometry.location);
-                map.setZoom(17);  // Why 17? Because it looks good.
-            }
-            marker.setIcon(/** @type {google.maps.Icon} */({
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(35, 35)
-            }));
-            marker.setPosition(place.geometry.location);
-            marker.setVisible(true);
-
-            var address = '';
-            if (place.address_components) {
-                address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
-                    (place.address_components[1] && place.address_components[1].short_name || ''),
-                    (place.address_components[2] && place.address_components[2].short_name || '')
-                ].join(' ');
-            }
-
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-            infowindow.open(map, marker);
-        });
-
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        function setupClickListener(id, types) {
-            var radioButton = document.getElementById(id);
-            radioButton.addEventListener('click', function() {
-                autocomplete.setTypes(types);
-            });
-        }
-
-        setupClickListener('changetype-all', []);
-        setupClickListener('changetype-address', ['address']);
-        setupClickListener('changetype-establishment', ['establishment']);
-        setupClickListener('changetype-geocode', ['geocode']);
-
-
-
-
-
-
     }
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -144,19 +111,9 @@
             }
         }
 
-        var options = {
-            types: ['(cities)'],
-            componentRestrictions: {country: "slv"}
-        };
-
-        var start = document.getElementById('searchTextField1');
-        var end = document.getElementById('searchTextField2');
-        var autocompletestart = new google.maps.places.Autocomplete(start, options);
-        var autocompleteend = new google.maps.places.Autocomplete(end, options);
-
         directionsService.route({
-            origin: autocompletestart,
-            destination: autocompleteend,
+            origin: document.getElementById('pac-input').value,
+            destination: document.getElementById('pac-input2').value,
             waypoints: waypts,
             optimizeWaypoints: true,
             travelMode: 'DRIVING'
@@ -170,7 +127,7 @@
                 for (var i = 0; i < route.legs.length; i++) {
                     var routeSegment = i + 1;
                     summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                        '</b><br>';
+                            '</b><br>';
                     summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
                     summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
@@ -182,6 +139,6 @@
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places"></script>
+
 </body>
 </html>
-
