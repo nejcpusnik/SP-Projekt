@@ -1,159 +1,41 @@
-html, body{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: #f5f4f0;
-    display:flex;
-    flex-flow: column;
-}
-
-.topnav{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position:fixed;
-    background-color: #EFECC9;
-    width: 100%;
-    height: 80px;
-    z-index: 1000;
-}
-
-.topnav li:not(#logoimg) {
-    float: right;
-    margin-top: 15px;
-}
-.topnav li:first-child{
-    float: left;
-}
-.topnav li:nth-child(3):hover{
-    border: 1px solid white;
-    background: rgba(7, 100, 129, 0.7);
-    transition: border, background 0.3s ease;
-}
-.topnav li a:not(#logo):hover{
-    color: white;
-    transition: color 0.3s ease;
-}
-#img{
-    max-width: 200px;
-    height:auto;
-    padding-top: 5%;
-}
-.topnav li:nth-child(3){
-    border: 1px solid #076481;
-    border-radius: 20px;
-}
-.topnav li a:not(#logo){
-    font-family: Quicksand, sans-serif;
-    font-weight: 400;
-    color: #076481;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    padding: 1em;
-    display:inline-block;
-}
-
-.topnav li:nth-child(3):hover{
-    border: 1px solid white;
-}
-
-.topnav li.icon{
-    display: none;
-}
-
-
-@media screen and (max-width:421px) {
-    ul.topnav li:not(:first-child) {display: none;}
-    ul.topnav li.icon {
-        float: right;
-        display: inline-block;
-    }
-}
-@media screen and (max-width:421px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive li.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .topnav.responsive li {
-        float: none;
-        display: inline;
-    }
-    .topnav.responsive li a {
-        display: block;
-        text-align: left;
-    }
-}
-
-
-* {box-sizing:border-box}
-.mySlides {display:none}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-    top:80px;
-}
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-
-.slideshow-container h2{
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    text-align: center;
-    font-family: quicksand, sans-serif;
-    font-size: 30px;
-    letter-spacing: 15px;
-    font-weight: 400;
-    color: rgba(239, 236, 201, 0.5);
-    z-index:100;
-}
-
-
 
 .mainContainer{
     position:relative;
-    width:100%;
-    height: 600px;
+    width:70%;
+    height: 700px;
     top: 100px;
-    display:flex;
-    flex-flow: column;
+    margin: 0 auto;
 }
 
 .loginContainer{
     position:relative;
-    width:30%;
-    height: 80%;
+    float:left;
+    width: 40%;
+    height: 70%;
     margin: 0 auto;
     border: 2px solid #076481;
     border-radius: 25px;
-    background-color: #E5E2AF;
     display:flex;
     flex-flow: column;
+    -webkit-box-shadow: 0 5px 20px 2px grey;
+    -moz-box-shadow: 0 5px 20px 2px grey ;
+    box-shadow: 0 5px 10px 2px grey;
+    top: 5%;
+}
+.signup-container{
+    position:relative;
+    float:right;
+    width: 40%;
+    height: 70%;
+    margin: 0 auto;
+    border: 2px solid #076481;
+    border-radius: 25px;
+    display:flex;
+    flex-flow: column;
+    -webkit-box-shadow: 0 5px 20px 2px grey;
+    -moz-box-shadow: 0 5px 20px 2px grey ;
+    box-shadow: 0 5px 10px 2px grey;
+    top: 5%;
 }
 
 h1{
@@ -162,6 +44,7 @@ h1{
     font-size: 30px;
     font-weight: 400;
     color: #076481;
+    width: 100%;
 }
 
 form{
@@ -172,10 +55,22 @@ form{
     margin: 0 auto;
     position: relative;
     text-align: center;
-    top: 5%;
+}
+.signup-container form{
+    top:0;
+}
+.signup-container .gumb{
+    top:8%;
+}
+.loginContainer .gumb{
+    top:25%;
+}
+.loginContainer form{
+    top:10%;
 }
 
-input[type = "text"]{
+
+input[type = "text"], input[type ="password"]{
     width: 70%;
     padding: 10px 3px;
     margin: 15px 0;
@@ -195,14 +90,13 @@ input:focus{
 
 .gumb{
     width: 100%;
-    position:relative;
+    position: relative;
     margin: 0 auto;
     text-align: center;
-    top: 15%;
 }
-#button{
+#button, #button1{
     width: 70%;
-    padding: 15px 28%;
+    padding: 15px 20%;
     text-align: center;
     font-family: Quicksand, sans-serif;
     font-weight: 400;
@@ -214,6 +108,7 @@ input:focus{
     background-color: rgba(200, 200, 200, 0);
     cursor: pointer;
 }
+
 .button:focus{
     outline: none;
 }
@@ -231,14 +126,7 @@ input:focus{
     margin: 0 auto;
     top: 19%;
 }
-#button1, #button2{
+#forgot{
     font-family: quicksand, sans-serif;
     font-size: 14px;
-}
-
-.info{
-    position:relative;
-    background-color: #012F2F;
-    width:100%;
-    height: 300px;
 }

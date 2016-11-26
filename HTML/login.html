@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <title>LogIn to Trippy</title>
     <link rel="stylesheet" type="text/css" href="../CSS/loginstyle.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/loginscript.js"></script>
+    <script type="text/javascript" src="../JS/combinescript.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class ="nav">
         <ul class="topnav" id = "myTopnav">
-            <li id="logoimg"><a id ="logo"href="#home"><img id="img" src="../docs/trippy-logo.png"></a></li>
-            <li><a href="#login">Log In</a></li>
-            <li><a href="#plan">Plan your trip</a></li>
-            <li><a href="#explore">Explore</a></li>
+            <li class="logoimg">
+                <a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a>
+            </li>
+            <li><a href="login.html">Log In | Sign Up</a></li>
+            <li><a href="index.html">Plan your trip</a></li>
+            <li><a href="places.html">Explore</a></li>
             <li class="icon">
                 <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
             </li>
@@ -23,7 +27,9 @@
     </div>
 
     <div class="slideshow-container">
-        <h2>Your weekly dose of exploring</h2>
+        <div class="text-wrapper">
+            <h2>Your weekly dose of exploring</h2>
+        </div>
         <div class="mySlides fade">
             <img src="../docs/Images/bled300px.png" style="width:100%">
         </div>
@@ -51,22 +57,33 @@
                 <label for="usr">E-mail or username:</label><br>
                 <input type="text" id ="usr" name = "username"><br>
                 <label for="pw">Password:</label><br>
-                <input type="text" id ="pw" name = "password">
+                <input type="password" id ="pw" name = "password">
             </form>
             <div class="gumb">
-                <a href="signin" id="button">Sign in</a>
+                <a href="maps.html" id="button">Sign in</a>
+                <br>
+                <br>
+                <a href="forgot" id="forgot">Forgot password?</a>
             </div>
-            <div class="bcontainer">
-                <a href="forgot" id="button1">Forgot password?</a>
-                <a href="create" id="button2">Create a new account.</a>
+        </div>
+        <div class="signup-container">
+            <h1>Create a new account:</h1>
+            <form>
+                <input type="text" id ="usr1" name = "username" placeholder="username"><br>
+                <input type="text" id ="mail" name = "mail" placeholder="E-mail"><br>
+                <input type="password" id ="pw1" name = "password" placeholder="Password">
+                <input type="password" id ="pw2" name = "password" placeholder="Re-enter password">
+            </form>
+            <div class="gumb">
+                <a href="signup" id="button1">Create</a>
             </div>
         </div>
     </div>
-    
-    
-    <div class="info"></div>
-
-
-
+    <footer>
+        <div class="info">
+            <h2>Nejc Pušnik</h2>
+        </div>
+    </footer>
 </body>
+
 </html>
