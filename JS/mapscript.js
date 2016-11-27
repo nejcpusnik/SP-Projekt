@@ -20,8 +20,8 @@ function initMap() {
     var input2 = document.getElementById('pac-input2')
     var searchBox = new google.maps.places.SearchBox(input);
     var searchBox2 = new google.maps.places.SearchBox(input2);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
+    map.controls[google.maps.ControlPosition.LEFT].push(input);
+    map.controls[google.maps.ControlPosition.LEFT].push(input2);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
@@ -53,11 +53,14 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             directionsDisplay.setDirections(response);
             var route = response.routes[0];
             var summaryPanel = document.getElementById('directions-panel');
+            var routeinfo = document.getElementById('routeinfo');
+            routeinfo.innerHTML = 'Route Information:<br>';
             summaryPanel.innerHTML = '';
+            summaryPanel.className="directions-panel";
             // For each route, display summary information.
             for (var i = 0; i < route.legs.length; i++) {
                 var routeSegment = i + 1;
-                summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+                summaryPanel.innerHTML += '<b>Route Segment ' + routeSegment +
                     '</b><br>';
                 summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
                 summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
@@ -65,10 +68,20 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             }
         }
         else if(status == 'NOT_FOUND'){
-            window.alert('Starting or ending destination was not set!!');
+            window.alert('INVALID STARTING OR ENDING DESTINATION!');
         }
         else {
             window.alert('Directions request failed due to ' + status);
         }
     });
+}
+
+function enterMap(){
+    var url = window.location.href;
+    url = url.split("html?");
+    url = url[1].split("&");
+    var startdest = url[0].split("=");
+    var enddest = url[1].split("=");
+    document.getElementById('pac-input').value = startdest[1];
+    document.getElementById('pac-input2').value = enddest[1];
 }

@@ -6,63 +6,44 @@ html, body{
     height: auto;
     font-family: Quicksand, sans-serif;
 }
-
-.topnav{
+ul.topnav {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
     overflow: hidden;
-    position:fixed;
     background-color: #076481;
-    width: 100%;
-    min-height: 80px;
-    z-index: 1000;
-
 }
 
-.topnav li:not(.logoimg) {
-    float: right;
-    margin-top: 15px;
-}
-.topnav li:first-child{
+/* Float the list items side by side */
+ul.topnav li{float: right;}
+ul.topnav li:first-child{
     float: left;
 }
-.topnav img{
-    max-width: 150px;
-    height: auto;
-    z-index: 10000;
-    margin-top: 5px;
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: lightblue;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
 }
 .topnav li:nth-child(3){
     border: 1px solid lightblue;
-    border-radius: 20px;
+    border-radius: 15px;
 }
-
-.topnav li a:not(#logo){
-    font-family: Quicksand, sans-serif;
-    font-weight: 400;
-    color: lightblue;
-    text-decoration: none;
-    text-align: center;
-    padding: 1em;
-    display:inline-block;
-}
-
 .topnav li:nth-child(3):hover{
     border: 1px solid white;
     transition: border 0.5s ease;
 }
-
-.topnav li a:not(#logo):hover{
+.topnav li a:hover{
     color: white;
     transition: color 0.3s ease;
 }
-.topnav li.icon{
-    display: none;
-}
-.topnav li a:hover{
-    color: white;
-}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
 
 
 /* Slideshow Fading animation (login, map, places) */
@@ -74,11 +55,11 @@ html, body{
 .slideshow-container {
     max-width: 100%;
     position: relative;
-    margin: auto;
-    top:80px;
+    margin: 0;
 }
-
-
+.slideshow-container img{
+    width: 100%
+}
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -86,10 +67,6 @@ html, body{
     animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-}
 
 @keyframes fade {
     from {opacity: .2}
@@ -98,18 +75,17 @@ html, body{
 
 .slideshow-container h2{
     position: absolute;
-    top: 30%;
+    margin-top: 5%;
+    display:flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
-    font-family: quicksand, sans-serif;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     letter-spacing: 15px;
     font-weight: 400;
-    color: rgba(239, 236, 201, 0.5);
+    color: rgba(239, 236, 201, 0.4);
     z-index:100;
 }
-
-
 
 .info{
     position: relative;
@@ -127,47 +103,101 @@ html, body{
     color: #076481;
 }
 footer{
-    background:#012F2F;
-    color: white;
-    font-family:Quicksand, sans-serif;
     height: 100px;
-    bottom: 0;
+    /*bottom: 0;*/
     width: 100%;
-    clear:both;
+    margin: 0;
+    padding: 0;
+    color: #012F2F;
+    font-family: Raleway, 'sans-serif';
 }
 
+footer h2{
+    border-top: 1px solid grey;
+    padding: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 30px;
+    padding-top: 15px;
 
+}
 
-@media screen and (max-width:540px) {
+@media only screen and (max-device-width : 1014px){
+    .loginContainer, .signup-container{
+        float:none;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+}
+
+@media screen and (max-width:680px) {
     ul.topnav li:not(:first-child) {display: none;}
     ul.topnav li.icon {
         float: right;
         display: inline-block;
     }
 
-
-
-
-}
-@media screen and (max-width:540px) {
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive li.icon {
+    ul.topnav.responsive {position: relative;}
+    ul.topnav.responsive li.icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-
-    .topnav.responsive li {
+    ul.topnav.responsive li {
         float: none;
         display: inline;
     }
-
-    .topnav.responsive li a {
+    ul.topnav.responsive li a {
         display: block;
         text-align: left;
+    }
+
+
+    /*  Maps responsive styles */
+
+
+    #side-panel{
+        float: none;
+        width: 100%;
+    }
+
+    #map{
+        float: none;
+        width: 100%;
+        height: 400px;
+    }
+
+    .formtohide{
+        display:none;
+    }
+    .header-text{
+        width: 80%;
+    }
+    .header-text h2{
+        font-size: 4.5vw;
+    }
+    .mainHidden{
+        display:block;
+        text-align: center;
+    }
+    .mainContainer{
+        width: 100%;
+    }
+    .about h2{
+        font-size: 25px
+    }
+    .about p{
+        font-size: 15px;
+    }
+    .main-places-container{
+        width: 80%;
+        padding-bottom:0;
+    }
+    #choose{
+        padding:0;
+        font-size: 25px;
     }
 
 }

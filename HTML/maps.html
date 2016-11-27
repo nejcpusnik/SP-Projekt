@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Plan your trip!</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/mapstyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="../JS/mapscript.js"></script>
     <script type="text/javascript" src="../JS/combinescript.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-    <nav id="navMenu">
-        <ul class="topnav" >
-            <li class="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a></li>
-            <li><a href="login.html">Log In | Sign Up</a></li>
-            <li><a href="index.html">Plan your trip</a></li>
-            <li><a href="places.html">Explore</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
-            </li>
-        </ul>
-    </nav>
+<body onload="enterMap();">
+    <ul class="topnav" id="myTopnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="maps.html">Plan your trip</a></li>
+        <li><a href="places.html">Explore</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+        </li>
+    </ul>
 
     <div class="slideshow-container">
         <h2>Your weekly dose of exploring</h2>
         <div class="mySlides fade">
-            <img src="../docs/Images/bled300px.png" style="width:100%">
+            <img src="../docs/Images/bled300px.png" alt="img1">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img3.jpg" style="width:100%">
+            <img src="../docs/Images/img3.jpg" alt="img2">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img2.jpg" style="width:100%">
+            <img src="../docs/Images/img2.jpg" alt="img3">
         </div>
         <div style="display: none">
             <span class="dot"></span>
@@ -48,32 +46,38 @@
     <script>showSlides();</script>
 
 
-    <div class="choose">
-        <h1>Choose places to visit on your Trippy trip</h1>
-        <a id="tomap" href="#tomap" class="fa fa-chevron-circle-down" ></a>
-    </div>
+
+    <h1 id="choose">Choose places to visit on your Trippy trip</h1>
+<!--        <a id="tomap" href="#waypoints" class="fa fa-chevron-circle-down" ></a>-->
+
     <div class="myMap">
+        <div id="map"></div>
+        <input id="pac-input" class="controls" type="text" placeholder="Starting destination">
+        <input id="pac-input2" class="controls" type="text" placeholder="Ending destination">
         <div id="side-panel">
             <div>
-                <p>Waypoints:</p><br>
-                <select multiple id="waypoints">
+                <p>Add stops to your trip:</p><br>
+                <select size="5" multiple id="waypoints">
                     <option value="Bled, Slovenia">Bled</option>
                     <option value="Bohinj, Slovenia">Bohinj</option>
                     <option value="Bovec, Slovenia">Bovec</option>
                     <option value="Soča, Tolmin">Soča</option>
+                    <option value="Logarska dolina, Mozirje, Slovenia">Logarska dolina</option>
+
                 </select>
                 <br>
-                <input type="submit" id="submit">
+                <input type="submit" id="submit" value="Show">
             </div>
+            <div id="routeinfo"></div>
             <div id="directions-panel"></div>
         </div>
-        <div id="map"></div>
-        <input id="pac-input" class="controls" type="text" placeholder="Starting destination">
-        <input id="pac-input2" class="controls" type="text" placeholder="Ending destination">
+
     </div>
     <footer>
         <div class="info">
-            <h2>Nejc Pušnik</h2>
+            <h2>Nejc Pušnik<br>
+                Spletno programiranje 2016<br>
+                e-mail: np4518@student.uni-lj.si</h2>
         </div>
     </footer>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places&avoid=highways"></script>

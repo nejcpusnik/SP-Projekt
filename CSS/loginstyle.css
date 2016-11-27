@@ -1,33 +1,32 @@
 
 .mainContainer{
     position:relative;
-    width:70%;
-    height: 700px;
-    top: 100px;
+    width: 75vw;
+    min-height: 600px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .loginContainer{
     position:relative;
     float:left;
-    width: 40%;
-    height: 70%;
-    margin: 0 auto;
+    width: 380px;
+    height: 450px;
     border: 2px solid #076481;
     border-radius: 25px;
     display:flex;
     flex-flow: column;
+    justify-content: center;
     -webkit-box-shadow: 0 5px 20px 2px grey;
     -moz-box-shadow: 0 5px 20px 2px grey ;
     box-shadow: 0 5px 10px 2px grey;
-    top: 5%;
+    margin: 25px 0;
 }
 .signup-container{
     position:relative;
     float:right;
-    width: 40%;
-    height: 70%;
-    margin: 0 auto;
+    width: 380px;
+    height: 450px;
     border: 2px solid #076481;
     border-radius: 25px;
     display:flex;
@@ -35,7 +34,7 @@
     -webkit-box-shadow: 0 5px 20px 2px grey;
     -moz-box-shadow: 0 5px 20px 2px grey ;
     box-shadow: 0 5px 10px 2px grey;
-    top: 5%;
+    margin: 25px 0;
 }
 
 h1{
@@ -50,23 +49,15 @@ h1{
 form{
     width:100%;
     color: #076481;
-    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     margin: 0 auto;
     position: relative;
     text-align: center;
 }
-.signup-container form{
-    top:0;
-}
-.signup-container .gumb{
-    top:8%;
-}
-.loginContainer .gumb{
-    top:25%;
-}
+
+
 .loginContainer form{
-    top:10%;
+    top:5%;
 }
 
 
@@ -88,26 +79,28 @@ input:focus{
     box-shadow: 0 0 20px 1px grey;
 }
 
-.gumb{
+.forgoten{
     width: 100%;
     position: relative;
     margin: 0 auto;
     text-align: center;
 }
-#button, #button1{
-    width: 70%;
-    padding: 15px 20%;
+
+.button{
+    width: 50%;
+    padding: 10px 5px;
     text-align: center;
     font-family: Quicksand, sans-serif;
     font-weight: 400;
     font-size: 20px;
     text-decoration: none;
     border-radius: 15px;
-    border: 1px solid #012F2F;
+    border: 2px solid #076481;
     color: #076481;
     background-color: rgba(200, 200, 200, 0);
     cursor: pointer;
 }
+
 
 .button:focus{
     outline: none;
@@ -119,14 +112,16 @@ input:focus{
 .button:active{
     background-color: rgba(7, 100, 129, 0.15);
 }
-.bcontainer{
-    width: 100%;
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
-    top: 19%;
-}
+
 #forgot{
-    font-family: quicksand, sans-serif;
     font-size: 14px;
+}
+
+span.formWarning, span.loginWarning{
+    display: none;
+    color: red;
+}
+
+.redBorder{
+    border-color: red !important;
 }

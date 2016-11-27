@@ -1,11 +1,25 @@
-
 .container{
-    width:100%;
-    top:80px;
+
     position: relative;
 }
 
-#crossfade > img {
+#crossfade{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #012F2F;
+}
+
+
+#crossfade > img.dummyImg{
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#crossfade > img.slideCross {
     width: 100%;
     position: absolute;
     top: 0;
@@ -20,77 +34,70 @@
     animation: imageAnimation 40s linear infinite 0s;
 }
 
-#crossfade > img:nth-child(2)  {
+#crossfade > img.slideCross:nth-child(2)  {
     -webkit-animation-delay: 10s;
     -moz-animation-delay: 10s;
     -o-animation-delay: 10s;
     animation-delay: 10s;
 }
-#crossfade > img:nth-child(3) {
+#crossfade > img.slideCross:nth-child(3) {
     -webkit-animation-delay: 20s;
     -moz-animation-delay: 20s;
     -o-animation-delay: 20s;
     animation-delay: 20s;
 }
-#crossfade > img:nth-child(4) {
+#crossfade > img.slideCross:nth-child(4) {
     -webkit-animation-delay: 30s;
     -moz-animation-delay: 30s;
     -o-animation-delay: 30s;
     animation-delay: 30s;
 }
-#crossfade > img:nth-child(5) {
+#crossfade > img.slideCross:nth-child(5) {
     -webkit-animation-delay: 40s;
     -moz-animation-delay: 40s;
     -o-animation-delay: 40s;
-    animation-delay: 40 s;
+    animation-delay: 40s;
 }
 
-@-webkit-keyframes imageAnimation {
-    0% { opacity: 0;
-        -webkit-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-        -webkit-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 1 }
-    100% { opacity: 0 }
+
+/*@-webkit-keyframes imageAnimation {
+    0% {opacity: 0;}
+    8% {opacity: 1;}
+    17% {opacity: 1}
+    25% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @-moz-keyframes imageAnimation {
-    0% { opacity: 0;
-        -moz-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-        -moz-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 1 }
-    100% { opacity: 0 }
+    0% {opacity: 0;}
+    8% {opacity: 1;}
+    17% {opacity: 1}
+    25% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @-o-keyframes imageAnimation {
-    0% { opacity: 0;
-        -o-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-        -o-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 1 }
-    100% { opacity: 0 }
+    0% {opacity: 0;}
+    8% {opacity: 1;}
+    17% {opacity: 1}
+    25% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @-ms-keyframes imageAnimation {
-    0% { opacity: 0;}
-    8% { opacity: 1;}
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
+    0% {opacity: 0;}
+    8% {opacity: 1;}
+    17% {opacity: 1;}
+    25% {opacity: 1;}
+    100% {opacity: 0}
+}*/
 
 @keyframes imageAnimation {
-    0% { opacity: 0;
-        animation-timing-function: ease-in; }
-    8% { opacity: 1;
-        animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 1 }
-    100% { opacity: 0 }
+    0% {opacity: 0;}
+    8% {opacity: 1;}
+    17% {opacity: 1}
+    25% {opacity: 1}
+    100% {opacity: 0}
 }
 
 
@@ -104,14 +111,13 @@
     width: 100%;
     display: flex;
     flex-flow: column;
-    top: 80px;
+    top: 100px;
     max-height:100%;
 }
 .header-text{
     position: relative;
     text-align: center;
-    top: 15%;
-    max-width: 45%;
+    width: 54vw;
     background-color: rgba(170, 170, 170, 0.3);
     border-radius: 10px;
     margin: 0 auto;
@@ -119,30 +125,29 @@
 
 #logo-text{
     max-width: 70%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 10px 0;
     border-bottom: solid #EFECC9 1px;
 }
 .header-text h2{
     color: #EFECC9;
     font-family: 'Quicksand', sans-serif;
-    max-font-size: 28px;
+    font-size: 25px;
     font-weight: 100;
-    padding-bottom: 5%;
+    padding: 10px 0;
+    margin: 0;
 }
 
-.main form{
+.main form, .mainHidden form{
     max-width:100%;
     color: #fff;
-    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     margin: 0 auto;
-    position: relative;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 10px;
 }
 
-.main form input[type = "text"]{
+
+.main form input[type = "text"], .mainHidden form input[type="text"]{
     max-width: 100%;
     padding: 10px 0;
     box-sizing: border-box;
@@ -153,8 +158,14 @@
     color: #fff;
     font-size: 15px;
     font-weight: 400;
-    margin-bottom: 10%;
-    margin-top: 1%;
+}
+.mainHidden form input[type="text"]{
+    color: #076481;
+    border: 1px solid lightgray;
+}
+.mainHidden form{
+    color: #076481;
+    background-color: #f5f4f0;
 }
 
 .main form input:focus{
@@ -165,15 +176,25 @@
     border: 1px solid rgba(231, 248, 254, 1);
     transition: border 0.3s ease;
 }
+.mainHidden form input:focus{
+    outline: none;
+    border: 1px solid #012F2F;
+}
+.mainHidden form input:hover{
+    border: 1px solid #012F2F;
+    transition: border 0.3s ease;
+}
+.mainHidden .gumb{
+    color: #076481;
+    border: 1px solid #076481;
+    margin-bottom: 20px;
+}
+
 .gumb{
-    position: relative;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
-}
-#go{
     transition: .5s ease;
-    max-width: 100%;
     padding: 10px 10px;
     font-family: Quicksand, sans-serif;
     font-weight: 400;
@@ -186,19 +207,22 @@
     background-color: rgba(200, 200, 200, 0);
     cursor: pointer;
 }
+
 #go:hover{
     background-color: rgba(7, 100, 129, 0.5);
     border: 1px solid rgba(7, 100, 129, 0.5);
 }
 
+.mainHidden{
+    display: none;
+}
+
 .about{
-    position: absolute;
+    position: relative;
     background: #012F2F;
     width:100%;
     margin: 0 auto;
     text-align: center;
-    height:auto;
-    top: 1200px;
 }
 .abouttext{
     background: #f5f4f0;
@@ -209,27 +233,25 @@
     margin: 0 auto;
 }
 .abouttext h2{
-    position: relative;
     max-width: 60%;
     color: #012F2F;
     margin: 0 auto;
     text-align: center;
     font-weight: 600;
-    font-size: 40px;
-    font-family: Quicksand, sans-serif;
-    padding: 3% 0;
+    font-size: 35px;
+    padding: 25px 0;
 }
 .abouttext p{
     position:relative;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 2vw;
     font-family: Quicksand, sans-serif;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
     max-width: 70%;
     color: #076481;
     line-height: 2em;
-    padding-bottom: 3%;
+    padding: 25px 0;
 }
 
 .fa-chevron-down:before{
@@ -253,7 +275,9 @@ input[type=checkbox]:checked ~ label {
 
 input[type=checkbox]:checked ~ div {
     display:block;
-    max-height: 500px;
-    transition: max-height 0.3s ease-in;
-
+    max-height: 2500px;
+    transition: max-height 0.5s ease-in-out;
+}
+input[type=checkbox]:not(checked) ~ div {
+    transition: max-height 0.2s ease-out;
 }

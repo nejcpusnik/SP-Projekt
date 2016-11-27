@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Places | Explore the places in our database!</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/placesstyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/landingscript.js"></script>
     <script type="text/javascript" src="../JS/combinescript.js"></script>
@@ -13,30 +13,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class ="nav">
-        <ul class="topnav" id = "myTopnav">
-            <li id="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a></li>
-            <li><a href="login.html">Log In | Sign Up</a></li>
-            <li><a href="index.html">Plan your trip</a></li>
-            <li><a href="places.html">Explore</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="maps.html">Plan your trip</a></li>
+        <li><a href="places.html">Explore</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+        </li>
+    </ul>
 
     <div class="slideshow-container">
         <h2>Your weekly dose of exploring</h2>
         <div class="mySlides fade">
-            <img src="../docs/Images/bled300px.png" style="width:100%">
+            <img src="../docs/Images/bled300px.png" alt="image1">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img3.jpg" style="width:100%">
+            <img src="../docs/Images/img3.jpg" alt="image2">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img2.jpg" style="width:100%">
+            <img src="../docs/Images/img2.jpg" alt="image3">
         </div>
         <div style="display: none">
             <span class="dot"></span>
@@ -49,15 +47,14 @@
 
 
 
-    <div class="main-container">
+    <div class="main-places-container">
         <h1>Explore regions of Slovenia and get to know the places you are planning to visit </h1>
 
         <div class="pokrajina">
-            <label class="ime-pokrajine">GORENJSKA</label>
+            <label class="ime-pokrajine" for="toggle-1">GORENJSKA</label>
             <input type="checkbox" id="toggle-1">
             <label class="fa fa-chevron-right" for="toggle-1"></label>
             <div class="abouttext">
-                <h2>How Trippy works</h2>
                 <p> 1. Choose the starting and ending destination of your trip<br>
                     2. Apply places you want to visit along your trip<br>
                     3. Let Trippy adjust your route on the map<br>
@@ -68,11 +65,10 @@
         </div>
         <br>
         <div class="pokrajina">
-            <label class="ime-pokrajine">STAJERSKA</label>
+            <label class="ime-pokrajine" for="toggle-2">STAJERSKA</label>
             <input type="checkbox" id="toggle-2">
             <label class="fa fa-chevron-right" for="toggle-2"></label>
             <div class="abouttext">
-                <h2>How Trippy works</h2>
                 <p> 1. Choose the starting and ending destination of your trip<br>
                     2. Apply places you want to visit along your trip<br>
                     3. Let Trippy adjust your route on the map<br>
@@ -83,11 +79,10 @@
         </div>
         <br>
         <div class="pokrajina">
-            <label class="ime-pokrajine">PRIMORSKA</label>
+            <label class="ime-pokrajine" for="toggle-3">PRIMORSKA</label>
             <input type="checkbox" id="toggle-3">
             <label class="fa fa-chevron-right" for="toggle-3"></label>
             <div class="abouttext">
-                <h2>How Trippy works</h2>
                 <p> 1. Choose the starting and ending destination of your trip<br>
                     2. Apply places you want to visit along your trip<br>
                     3. Let Trippy adjust your route on the map<br>
@@ -98,11 +93,10 @@
         </div>
         <br>
         <div class="pokrajina">
-            <label class="ime-pokrajine">DOLENJSKA</label>
+            <label class="ime-pokrajine" for="toggle-4">DOLENJSKA</label>
             <input type="checkbox" id="toggle-4">
             <label class="fa fa-chevron-right" for="toggle-4"></label>
             <div class="abouttext">
-                <h2>How Trippy works</h2>
                 <p> 1. Choose the starting and ending destination of your trip<br>
                     2. Apply places you want to visit along your trip<br>
                     3. Let Trippy adjust your route on the map<br>
@@ -113,7 +107,7 @@
         </div>
         <br>
         <div class="pokrajina">
-            <label class="ime-pokrajine">OSREDNJESLOVENSKA</label>
+            <label class="ime-pokrajine" for="toggle-5">OSREDNJESLOVENSKA</label>
             <input type="checkbox" id="toggle-5">
             <label class="fa fa-chevron-right" for="toggle-5"></label>
             <div class="abouttext">
@@ -127,11 +121,10 @@
         </div>
         <br>
         <div class="pokrajina">
-            <label class="ime-pokrajine">KOROSKA</label>
+            <label class="ime-pokrajine" for="toggle-6">KOROSKA</label>
             <input type="checkbox" id="toggle-6">
             <label class="fa fa-chevron-right" for="toggle-6"></label>
             <div class="abouttext">
-                <h2>How Trippy works</h2>
                 <p> 1. Choose the starting and ending destination of your trip<br>
                     2. Apply places you want to visit along your trip<br>
                     3. Let Trippy adjust your route on the map<br>
@@ -145,7 +138,9 @@
     </div>
     <footer>
         <div class="info">
-            <h2>Nejc Pušnik</h2>
+            <h2>Nejc Pušnik<br>
+                Spletno programiranje 2016<br>
+                e-mail: np4518@student.uni-lj.si</h2>
         </div>
     </footer>
 </body>

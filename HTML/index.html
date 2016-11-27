@@ -4,69 +4,89 @@
     <meta charset="UTF-8">
     <title>Trippy | Experience the best of your trip!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/landingstyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/landingscript.js"></script>
     <script type="text/javascript" src="../JS/combinescript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav id="navMenu">
-        <ul class="topnav" >
-            <li class="logoimg"><a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a></li>
-            <li><a href="login.html">Log In | Sign Up</a></li>
-            <li><a href="index.html">Plan your trip</a></li>
-            <li><a href="places.html">Explore</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
-            </li>
-        </ul>
-    </nav>
+
+    <ul class="topnav" id="myTopnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="maps.html">Plan your trip</a></li>
+        <li><a href="places.html">Explore</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+        </li>
+    </ul>
     <div class="container">
         <div id="crossfade">
-            <img src="../docs/Images/land1.jpg" alt="Image 1">
-            <img src="../docs/Images/land2.jpg" alt="Image 2">
-            <img src="../docs/Images/land3.jpg" alt="Image 3">
-            <img src="../docs/Images/land4.jpg" alt="Image 4">
-            <img src="../docs/Images/land5.jpg" alt="Image 5">
+            <img class="dummyImg" src="../docs/Images/transparent.png" alt="dummy">
+            <img class="slideCross" src="../docs/Images/land1.jpg" alt="Image 1">
+            <img class="slideCross" src="../docs/Images/land2.jpg" alt="Image 2">
+            <img class="slideCross" src="../docs/Images/land3.jpg" alt="Image 3">
+            <img class="slideCross" src="../docs/Images/land4.jpg" alt="Image 4">
+            <img class="slideCross" src="../docs/Images/land5.jpg" alt="Image 5">
+
+
         </div>
         <div class ="main">
             <div class = "header-text">
-                <img id="logo-text" src="../docs/trippy-logo-text.png">
+                <img id="logo-text" src="../docs/trippy-logo-text.png" alt="logo">
                 <h2>Plan your trip and don't miss anything worth checking out!</h2>
             </div>
-            <form>
+            <form class="formtohide" method="GET" action="maps.html">
                 <label for="start">Starting destination:</label><br>
-                <input type="text" id ="start" name = "startdest"><br>
+                <input type="text" id ="start" name = "startdest"><br><br>
                 <label for="end">Ending destination:</label><br>
-                <input type="text" id ="end" name = "enddest">
+                <input type="text" id ="end" name = "enddest"><br><br>
+                <input class ="gumb" type="submit" value="Plan your trip" onclick="submitDest();">
             </form>
-            <div class="gumb">
-                <a id="go" href="maps.html">Plan your trip</a>
-            </div>
+
         </div>
     </div>
-    
-    <!--<div class="about">
+
+
+    <div class="mainHidden">
+        <form method="GET" action="maps.html">
+            <label for="start-hidden">Starting destination:</label><br>
+            <input type="text" id ="start-hidden" name = "startdest">
+            <br>
+            <br>
+            <label for="end-hidden">Ending destination:</label><br>
+            <input type="text" id ="end-hidden" name = "enddest">
+            <br>
+            <br>
+            <input class="gumb" type="submit" value="Plan your trip" onclick="submitDest();">
+        </form>
+    </div>
+
+    <div class="about">
         <input type="checkbox" id="toggle-1">
         <label class="fa fa-chevron-down" for="toggle-1"></label>
         <div class="abouttext">
             <h2>How Trippy works</h2>
-            <p> 1. Choose the starting and ending destination of your trip<br>
-                2. Apply places you want to visit along your trip<br>
-                3. Let Trippy adjust your route on the map<br>
-                4. Explore places to get to know more about them<br>
-                5. Let the Trippy trip begins
+            <p> <b>1.</b> Choose the starting and ending destination of your trip<br>
+                <b>2.</b> Apply places you want to visit along your trip<br>
+                <b>3.</b> Let Trippy adjust your route on the map<br>
+                <b>4.</b> Explore places to get to know more about them<br>
+                <b>5.</b> Let the Trippy trip begins
             </p>
         </div>
-    </div>-->
+    </div>
+
     <footer>
         <div class="info">
-            <h2>Nejc Pušnik</h2>
+            <h2>Nejc Pušnik<br>
+            Spletno programiranje 2016<br>
+            e-mail: np4518@student.uni-lj.si</h2>
         </div>
     </footer>
+
 </body>
 
 </html>

@@ -5,41 +5,37 @@
     <title>LogIn to Trippy</title>
     <link rel="stylesheet" type="text/css" href="../CSS/loginstyle.css">
     <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
     <script type="text/javascript" src="../JS/loginscript.js"></script>
     <script type="text/javascript" src="../JS/combinescript.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class ="nav">
-        <ul class="topnav" id = "myTopnav">
-            <li class="logoimg">
-                <a id ="logo" href="index.html"><img id="img" src="../docs/trippy-logo-text.png"></a>
-            </li>
-            <li><a href="login.html">Log In | Sign Up</a></li>
-            <li><a href="index.html">Plan your trip</a></li>
-            <li><a href="places.html">Explore</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="maps.html">Plan your trip</a></li>
+        <li><a href="places.html">Explore</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
+        </li>
+    </ul>
 
     <div class="slideshow-container">
         <div class="text-wrapper">
             <h2>Your weekly dose of exploring</h2>
         </div>
         <div class="mySlides fade">
-            <img src="../docs/Images/bled300px.png" style="width:100%">
+            <img src="../docs/Images/bled300px.png" alt="image1">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img3.jpg" style="width:100%">
+            <img src="../docs/Images/img3.jpg" alt="image2">
         </div>
 
         <div class="mySlides fade">
-            <img src="../docs/Images/img2.jpg" style="width:100%">
+            <img src="../docs/Images/img2.jpg" alt="image3">
         </div>
         <div style="display: none">
             <span class="dot"></span>
@@ -53,35 +49,38 @@
     <div class="mainContainer">
         <div class="loginContainer">
             <h1>Login to your Trippy account:</h1>
-            <form>
+            <form id="loginForm" method="GET" action="maps.html">
                 <label for="usr">E-mail or username:</label><br>
                 <input type="text" id ="usr" name = "username"><br>
                 <label for="pw">Password:</label><br>
-                <input type="password" id ="pw" name = "password">
+                <input type="password" id ="pw" name = "password"><br>
+                <span id="loginWarning" class="loginWarning"></span><br>
+                <input value="Log In" class="button" type="submit" onclick="return loginCheck();">
             </form>
-            <div class="gumb">
-                <a href="maps.html" id="button">Sign in</a>
-                <br>
-                <br>
+            <br><br>
+            <div class="forgoten">
+
                 <a href="forgot" id="forgot">Forgot password?</a>
             </div>
         </div>
         <div class="signup-container">
             <h1>Create a new account:</h1>
-            <form>
+            <form id="newForm" method="GET" action="success.html">
                 <input type="text" id ="usr1" name = "username" placeholder="username"><br>
                 <input type="text" id ="mail" name = "mail" placeholder="E-mail"><br>
                 <input type="password" id ="pw1" name = "password" placeholder="Password">
-                <input type="password" id ="pw2" name = "password" placeholder="Re-enter password">
+                <input type="password" id ="pw2" name = "password" placeholder="Re-enter password"><br>
+                <span id="formWarning" class="formWarning"></span><br>
+                <input value="Create" class="button" type="submit" onclick="return formCheck();">
             </form>
-            <div class="gumb">
-                <a href="signup" id="button1">Create</a>
-            </div>
+
         </div>
     </div>
     <footer>
         <div class="info">
-            <h2>Nejc Pušnik</h2>
+            <h2>Nejc Pušnik<br>
+                Spletno programiranje 2016<br>
+                e-mail: np4518@student.uni-lj.si</h2>
         </div>
     </footer>
 </body>
