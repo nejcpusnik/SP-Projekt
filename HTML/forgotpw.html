@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change your password</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
+    <script type="text/javascript" src="../JS/forgotPw.js"></script>
+</head>
+<body>
+<h1>Forgot your accounts password? Don't worry!</h1>
+<h3>Enter your e-mail address and you will recieve the instructions on how to change your password:</h3>
+<form id="loginForm" method="GET" action="login.html">
+    <label for="forgotmail">E-mail:</label><br>
+    <input type="text" id ="forgotmail" name = "username"><br>
+    <span id="emailWarning" class="emailWarning"></span><br>
+    <input value="send" class="button" type="submit" onclick="return emailCheck()">
+</form>
+</body>
+</html>

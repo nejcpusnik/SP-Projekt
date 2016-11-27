@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../JS/landingscript.js"></script>
     <script type="text/javascript" src="../JS/combinescript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places&avoid=highways"></script>
 </head>
 <body>
 
@@ -23,17 +24,17 @@
             <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
         </li>
     </ul>
+
     <div class="container">
         <div id="crossfade">
             <img class="dummyImg" src="../docs/Images/transparent.png" alt="dummy">
-            <img class="slideCross" src="../docs/Images/land1.jpg" alt="Image 1">
-            <img class="slideCross" src="../docs/Images/land2.jpg" alt="Image 2">
-            <img class="slideCross" src="../docs/Images/land3.jpg" alt="Image 3">
-            <img class="slideCross" src="../docs/Images/land4.jpg" alt="Image 4">
-            <img class="slideCross" src="../docs/Images/land5.jpg" alt="Image 5">
-
-
+            <img class="slideCross" id="img1" src="../docs/Images/land1.jpg" alt="Image 1">
+            <img class="slideCross" id="img2" src="../docs/Images/land2.jpg" alt="Image 2">
+            <img class="slideCross" id="img3" src="../docs/Images/land3.jpg" alt="Image 3">
+            <img class="slideCross" id="img4" src="../docs/Images/land4.jpg" alt="Image 4">
+            <img class="slideCross" id="img5" src="../docs/Images/land5.jpg" alt="Image 5">
         </div>
+
         <div class ="main">
             <div class = "header-text">
                 <img id="logo-text" src="../docs/trippy-logo-text.png" alt="logo">
@@ -41,25 +42,21 @@
             </div>
             <form class="formtohide" method="GET" action="maps.html">
                 <label for="start">Starting destination:</label><br>
-                <input type="text" id ="start" name = "startdest"><br><br>
+                <input type="text" id ="start" name="startdest"><br><br>
                 <label for="end">Ending destination:</label><br>
-                <input type="text" id ="end" name = "enddest"><br><br>
+                <input type="text" id ="end" name="enddest"><br><br>
                 <input class ="gumb" type="submit" value="Plan your trip" onclick="submitDest();">
             </form>
-
         </div>
     </div>
-
 
     <div class="mainHidden">
         <form method="GET" action="maps.html">
             <label for="start-hidden">Starting destination:</label><br>
-            <input type="text" id ="start-hidden" name = "startdest">
-            <br>
+            <input type="text" id ="start-hidden" name = "startdest"><br>
             <br>
             <label for="end-hidden">Ending destination:</label><br>
-            <input type="text" id ="end-hidden" name = "enddest">
-            <br>
+            <input type="text" id ="end-hidden" name = "enddest"><br>
             <br>
             <input class="gumb" type="submit" value="Plan your trip" onclick="submitDest();">
         </form>
@@ -87,6 +84,15 @@
         </div>
     </footer>
 
+    <script>
+        function init() {
+            var input = document.getElementById('start');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            var input2 = document.getElementById('end');
+            var autocomplete2 = new google.maps.places.Autocomplete(input2);
+        }
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
 </body>
 
 </html>

@@ -122,6 +122,13 @@ footer h2{
     padding-top: 15px;
 
 }
+.redBorder{
+    border-color: red !important;
+}
+span.formWarning, span.loginWarning, span.emailWarning{
+    display: none;
+    color: red;
+}
 
 @media only screen and (max-device-width : 1014px){
     .loginContainer, .signup-container{

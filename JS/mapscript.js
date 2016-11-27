@@ -17,7 +17,7 @@ function initMap() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     });
     var input = document.getElementById('pac-input');
-    var input2 = document.getElementById('pac-input2')
+    var input2 = document.getElementById('pac-input2');
     var searchBox = new google.maps.places.SearchBox(input);
     var searchBox2 = new google.maps.places.SearchBox(input2);
     map.controls[google.maps.ControlPosition.LEFT].push(input);

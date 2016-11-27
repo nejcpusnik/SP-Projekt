@@ -117,11 +117,5 @@ input:focus{
     font-size: 14px;
 }
 
-span.formWarning, span.loginWarning{
-    display: none;
-    color: red;
-}
 
-.redBorder{
-    border-color: red !important;
-}
+
