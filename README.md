@@ -1,7 +1,13 @@
-# SP-Projekt
+﻿# SP-Projekt
 Repozitorij za projekt pri predmetu Spletno Programiranje
 
-Trip Planner:
+TRIPPY (Trip Planner):
 
-Spletna stran, ki omogoča lažje načrtovanje izleta. 
-Ob določitvi točk A in B na zemljevidu se v predhodno določenem radiju izpišejo vse zanimive in ogleda vredne destinacije na poti.  
+Trippy je spletna stran, ki omogoča lažje načrtovanje izletov. V svoji bazi vsebuje najzanimivejše destinacije na območju Slovenije ki so vredne ogleda vsakega človeka. Ob vstopu na spletno stran se uporabniku pokaže okno z dvema vnosnima poljema: začetno in končno destinacijo, ki jo želi prepotovati. Po vnosu destinacij se s klikom na gumb odpre naslednja stran, kjer se uporabniku prikaže zemljevid z vnosnimi polji, ki jih je že izpolnil, na desni strani pa mu je ponujen seznam vseh ogleda vrednih destinacij na njegovi poti. Izbere jih lahko poljubno število, s klikom "Show" pa se na zemljevidu izriše pot med krajnima točkama ter vmesnimi postojankami. Za informacijo in časovno planiranje se prav tako izpišejo deli poti med točkami ter njihova razdalja v kilometrih. Spletna stran vsebuje tudi okno za vpis v uporabnikov račun ter okno "Explore", ki ponuja podrobnejše opise vseh zanimivih destinacij kategoriziranih po Slovenskih regijah: Gorenjska, Štajerska, Primorska, Koroška, Dolenjska, Osrednjeslovenska.
+
+Ciljna publika spletne strani Trippy zajema tako slovenske državljane, kot tudi turiste, ki si želijo ogledati lepote Slovenije. Glede na to, da so razdalje med destinacijami lahko precejšnje, je spletna stran morda namenjena bolj motoristom, kot ostalim. Ciljne naprave szajemajo vse od mobilnih naprav, do tablic in računalnikov.
+
+Nekoliko več truda sem vnesel v t.i. slideshow ali spreminjajoče ozadje s slikami, ki se pretakajo ena v drugo. To sem poskusil narediti na dva načina in implementiral oba. Prvi način je implementiran brez pomoči programskega jezika Javascript, saj bazira vse le na uporabi stilskih gradnikov CSS3. Druga implementacija izmenjevanja slik v ozadju pa je nekoliko drugačna, saj vključuje tudi Javascript. Prav tako sem kar nekaj časa porabil za implementacijo API-ja Google Maps, da sem dosegel svoj želeni cilj. Pri tem sem moral namreč prikazati osnoven zemljevid, se naučiti določati t.i. markerjev in nazadnje izrisati pot na zemljevidu.
+
+Kometarji/izboljšave:
+Spletna stran trenutno še ne predvideva nobenih ločenih profilov. Vpis v svoj račun je torej še nesmiseln. Predvideno pa je vključiti funkcionalnost, ki bo ne-gostujočim uporabnikom omogočala ocenitev ogledanih destinacij in možnost ogleda podrobnejšega opisa vsake od destinacij na zavihku "Explore". Smisel dodatek bi bil tudi "google directions", pri čemer bi zemljevid pretvoril v navigacijsko okno, ki bi uporabniku prikazala vse podrobnosti poti z zavoji med tem, ko bi se uporabnik vozil do destinacije.

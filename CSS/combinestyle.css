@@ -138,6 +138,25 @@ span.formWarning, span.loginWarning, span.emailWarning{
     }
 
 }
+@media only screen and (max-device-width : 870px){
+    .formtohide{
+        display:none;
+    }
+    .main{
+        top:50px;
+    }
+    .header-text{
+        width: 80%;
+    }
+    .header-text h2{
+        font-size: 4.5vw;
+    }
+    .mainHidden{
+        display:block;
+        text-align: center;
+    }
+
+}
 
 @media screen and (max-width:680px) {
     ul.topnav li:not(:first-child) {display: none;}
@@ -176,19 +195,7 @@ span.formWarning, span.loginWarning, span.emailWarning{
         height: 400px;
     }
 
-    .formtohide{
-        display:none;
-    }
-    .header-text{
-        width: 80%;
-    }
-    .header-text h2{
-        font-size: 4.5vw;
-    }
-    .mainHidden{
-        display:block;
-        text-align: center;
-    }
+
     .mainContainer{
         width: 100%;
     }

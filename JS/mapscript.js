@@ -68,7 +68,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             }
         }
         else if(status == 'NOT_FOUND'){
-            window.alert('INVALID STARTING OR ENDING DESTINATION!');
+            window.alert('INVALID STARTING OR ENDING DESTINATION.');
+        }
+        else if(status == 'ZERO_RESULTS'){
+            window.alert('SPECIFIED ADDRESS WAS NOT FOUND.');
         }
         else {
             window.alert('Directions request failed due to ' + status);
