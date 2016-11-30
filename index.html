@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Trippy | Experience the best of your trip!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/landingstyle.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/combinestyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/landingstyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/combinestyle.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
-    <script type="text/javascript" src="../JS/landingscript.js"></script>
-    <script type="text/javascript" src="../JS/combinescript.js"></script>
+    <script type="text/javascript" src="JS/landingscript.js"></script>
+    <script type="text/javascript" src="JS/combinescript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkZnaT_pPL_61JqcWFdbyYFNT_5N-CIA&callback=initMap&libraries=places&avoid=highways"></script>
 </head>
@@ -17,9 +17,9 @@
 
     <ul class="topnav" id="myTopnav">
         <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Log in</a></li>
-        <li><a href="maps.html">Plan your trip</a></li>
-        <li><a href="places.html">Explore</a></li>
+        <li><a href="HTML/login.html">Log in</a></li>
+        <li><a href="HTML/maps.html">Plan your trip</a></li>
+        <li><a href="HTML/places.html">Explore</a></li>
         <li class="icon">
             <a href="javascript:void(0);" onclick="responsiveNav()">&#9776;</a>
         </li>
@@ -27,20 +27,20 @@
 
     <div class="container">
         <div id="crossfade">
-            <img class="dummyImg" src="../docs/Images/transparent.png" alt="dummy">
-            <img class="slideCross" id="img1" src="../docs/Images/land1.jpg" alt="Image 1">
-            <img class="slideCross" id="img2" src="../docs/Images/land2.jpg" alt="Image 2">
-            <img class="slideCross" id="img3" src="../docs/Images/land3.jpg" alt="Image 3">
-            <img class="slideCross" id="img4" src="../docs/Images/land4.jpg" alt="Image 4">
-            <img class="slideCross" id="img5" src="../docs/Images/land5.jpg" alt="Image 5">
+            <img class="dummyImg" src="docs/Images/transparent.png" alt="dummy">
+            <img class="slideCross" id="img1" src="docs/Images/land1.jpg" alt="Image 1">
+            <img class="slideCross" id="img2" src="docs/Images/land2.jpg" alt="Image 2">
+            <img class="slideCross" id="img3" src="docs/Images/land3.jpg" alt="Image 3">
+            <img class="slideCross" id="img4" src="docs/Images/land4.jpg" alt="Image 4">
+            <img class="slideCross" id="img5" src="docs/Images/land5.jpg" alt="Image 5">
         </div>
 
         <div class ="main">
             <div class = "header-text">
-                <img id="logo-text" src="../docs/trippy-logo-text.png" alt="logo">
+                <img id="logo-text" src="docs/trippy-logo-text.png" alt="logo">
                 <h2>Plan your trip and don't miss anything worth checking out!</h2>
             </div>
-            <form class="formtohide" method="GET" action="maps.html">
+            <form class="formtohide" method="GET" action="HTML/maps.html">
                 <label for="start">Starting destination:</label><br>
                 <input type="text" id ="start" name="startdest"><br><br>
                 <label for="end">Ending destination:</label><br>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="mainHidden">
-        <form method="GET" action="maps.html">
+        <form method="GET" action="HTML/maps.html">
             <label for="start-hidden">Starting destination:</label><br>
             <input type="text" id ="start-hidden" name = "startdest"><br>
             <br>
