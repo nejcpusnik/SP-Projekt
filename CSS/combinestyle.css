@@ -219,5 +219,8 @@ span.formWarning, span.loginWarning, span.emailWarning{
         padding:0;
         font-size: 25px;
     }
+    .topnav li:nth-child(3){
+        border: none;
+    }
 
 }
