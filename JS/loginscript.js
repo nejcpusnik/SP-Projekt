@@ -16,6 +16,10 @@ function formCheck(){
         mail.className = "redBorder";
         war.innerHTML = "Enter e-mail address.";
 
+    }else if(checkEmail(mail) == false){
+        mail.className = "redBorder";
+        war.innerHTML = "E-mail address is not valid.";
+
     }else if(pass1.value == "" && pass2.value == ""){
         pass1.className = "redBorder";
         war.innerHTML = "Enter password.";
@@ -29,6 +33,23 @@ function formCheck(){
         accounts.push([usr1.value, mail.value, pass1.value]);
         return true;
     }
+
+    if(usr1.value != ""){
+        usr1.className = "";
+
+    }else if(mail.value != ""){
+        mail.className = "";
+
+    }else if(checkEmail(mail)){
+        mail.className = "";
+
+    }else if(pass1.value != "" && pass2.value != ""){
+        pass1.className = "";
+
+    }else if(pass1.value == pass2.value){
+        pass2.className = "";
+    }
+
     document.getElementById('formWarning').style.display="block";
     return false;
 }
@@ -50,7 +71,7 @@ function loginCheck(){
         war.innerHTML = "Enter password.";
 
     }else{
-        war.innerHTML = "Log-in credentials did not match.";
+        war.innerHTML = "Username or password is incorrect.";
         for(var i=0; i<accounts.length; i++){
             if((accounts[i][0] == usr.value || accounts[i][1] == usr.value)
                 && accounts[i][2] == pass.value){
@@ -58,7 +79,21 @@ function loginCheck(){
             }
         }
     }
+    if(usr.value != ""){
+        usr.className = "";
+
+    }else if(pass.value != ""){
+        pass.className = "";
+    }
 
     document.getElementById('loginWarning').style.display="block";
     return false;
+}
+
+function checkEmail(email) {
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(email.value)) {
+        return false;
+    }
 }
