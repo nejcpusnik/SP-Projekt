@@ -186,13 +186,19 @@ span.formWarning, span.loginWarning, span.emailWarning{
 
     #side-panel{
         float: none;
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     #map{
         float: none;
         width: 100%;
         height: 400px;
+        left: 0;
+        right: 0;
+    }
+    .myMap{
+        width: 100%;
     }
 
 

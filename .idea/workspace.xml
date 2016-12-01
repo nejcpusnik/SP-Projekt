@@ -23,17 +23,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="combinestyle.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="combinestyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CSS/combinestyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+            <state relative-caret-position="363">
+              <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="combinescript.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="maps.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTML/maps.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-546">
+              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="combinescript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/combinescript.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -82,7 +92,6 @@
         <option value="$PROJECT_DIR$/CSS/loginstyle.css" />
         <option value="$PROJECT_DIR$/HTML/index.html" />
         <option value="$PROJECT_DIR$/CSS/placesstyle.css" />
-        <option value="$PROJECT_DIR$/CSS/combinestyle.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/HTML/login.html" />
         <option value="$PROJECT_DIR$/HTML/maps.html" />
@@ -91,6 +100,7 @@
         <option value="$PROJECT_DIR$/HTML/success.html" />
         <option value="$PROJECT_DIR$/JS/loginscript.js" />
         <option value="$PROJECT_DIR$/JS/combinescript.js" />
+        <option value="$PROJECT_DIR$/CSS/combinestyle.css" />
       </list>
     </option>
   </component>
@@ -323,12 +333,12 @@
       <workItem from="1479889710951" duration="22548000" />
       <workItem from="1480020598885" duration="19808000" />
       <workItem from="1480499115914" duration="166000" />
-      <workItem from="1480621955230" duration="2752000" />
+      <workItem from="1480621955230" duration="2973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120655000" />
+    <option name="totallyTimeSpent" value="120876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -520,14 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/maps.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/places.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -575,10 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/combinestyle.css">
+    <entry file="file://$PROJECT_DIR$/HTML/maps.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        <state relative-caret-position="-546">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -590,6 +592,14 @@
           <folding>
             <element signature="n#!!doc;n#responsiveNav#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/combinestyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
