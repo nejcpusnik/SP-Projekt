@@ -79,12 +79,23 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
+function getParameterByName(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+
+}
+var startdest = getParameterByName('startdest');
+var enddest = getParameterByName('enddest');
+
 function enterMap(){
-    var url = window.location.href;
-    url = url.split("html?");
-    url = url[1].split("&");
-    var startdest = url[0].split("=");
-    var enddest = url[1].split("=");
-    document.getElementById('pac-input').value = startdest[1];
-    document.getElementById('pac-input2').value = enddest[1];
+    document.getElementById('pac-input').value = startdest;
+    document.getElementById('pac-input2').value = enddest;
 }
